@@ -1,5 +1,9 @@
 from bs4 import BeautifulSoup
 
+# Simpler html version
+html_content = '<html><body><div id="main"><h1>Welcome</h1><p>Learn web scraping.</p></div></body></html>'
+
+# Complex version( more organized )
 html_content = """
 <html>
 <body>
@@ -20,3 +24,16 @@ main_div = soup.find('div', id='main')
 # Printing the div
 print("main div content")
 print(main_div.prettify())
+
+# Printing the children and parents
+children = main_div.children
+
+# Printing the children
+print("Children of the main div")
+
+for child in children:
+    print(child) # printing h1 tag and 2 p tag.
+    
+    
+
+
