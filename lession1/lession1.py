@@ -43,3 +43,13 @@ print("\n Parents of the main div")
 
 print(parents.name)
 
+# Using `find_next_sibling` and `find_previous_sibling` to Navigate Sibling Nodes
+
+# Finding the first paragraph.
+first_p = soup.find('div', id="main").find('p')
+print('First paragraph tag:', first_p)
+
+# Finding the second paragraph.
+second_p = soup.find_next_sibling()
+print('Second paragraph tag:', second_p)
+
