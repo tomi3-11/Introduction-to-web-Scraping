@@ -53,3 +53,7 @@ print('First paragraph tag:', first_p)
 second_p = soup.find_next_sibling()
 print('Second paragraph tag:', second_p)
 
+# finding the first sibling from the second
+first_p_from_second_p = second_p.find_previous_sibling()
+print('First paragraph tag from second paragraph:', first_p_from_second_p)
+
