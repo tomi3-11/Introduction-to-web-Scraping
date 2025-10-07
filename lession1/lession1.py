@@ -35,5 +35,11 @@ for child in children:
     print(child) # printing h1 tag and 2 p tag.
     
     
+# Accessing the parents of the main div.
+parents = main_div.parent
 
+# printing the parents of the main div
+print("\n Parents of the main div")
+
+print(parents.name)
 
