@@ -50,7 +50,7 @@ first_p = soup.find('div', id="main").find('p')
 print('First paragraph tag:', first_p)
 
 # Finding the second paragraph.
-second_p = soup.find_next_sibling()
+second_p = first_p.find_next_sibling()
 print('Second paragraph tag:', second_p)
 
 # finding the first sibling from the second
