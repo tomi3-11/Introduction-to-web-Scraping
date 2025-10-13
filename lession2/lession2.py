@@ -69,7 +69,37 @@ print(special_product[0].p.text) # Output: Product 2
 
 # Select direct child paragraphs of div with id Parent
 child_para = soup.select('#Parent > .child')
-print(child_para)
+print(child_para) # [<p class="Child" id="direct-nested">This is the child paragraph.</p>]
 
 super_nested_by_id = soup.select('#Parent > #super-nested')
-print(super_nested_by_id)
+print(super_nested_by_id) # []
+
+"""
+We can chain multiple CSS selectors together to create more complex rules. Here is an example of how to use this:
+"""
+
+select_chain = soup.select('#Parent > .notdirectchild > #super-nested')
+print(select_chain) # [<p class="Child" id="super-nested">This is not a direct child paragraph.</p>]
+
+# Nested Selectors
+
+# from bs4 import BeautifulSoup
+
+html_content = '<div id="Parent"><p class="Child">Product1</p><span class="notdirectchild"><p class="Child">Product2</p></span></div>'
+
+html_content = '''
+<div id="Parent">
+  <p class="Child">Product1</p>
+  <span class="notdirectchild">
+    <p class="Child">Product2</p>
+  </span>
+</div>
+'''
+
+soup = BeautifulSoup(html_content, 'html.parser')
+
+# Select all .Child that lies inside #Parent
+nested_elements = soup.select('#Parent .Child')
+print(nested_elements) # [<p class="Child">Product1</p>, <p class="Child">Product2</p>]
+
+
